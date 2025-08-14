@@ -14,12 +14,11 @@ import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Banner = () => {
-    useEffect(() => {
+  useEffect(() => {
     const isShortHeight = window.innerHeight < 700;
 
     ScrollTrigger.matchMedia({
       "(min-width: 991px)": function () {
-
         // First scroll animation (section 2)
         gsap.to("#headphone", {
           scrollTrigger: {
@@ -44,10 +43,10 @@ const Banner = () => {
             end: "bottom bottom",
             scrub: true,
           },
-          y: "218vh",
+          y: "240vh",
           x: "0",
           width: "35vw",
-          rotate: 35,
+          rotate: 40,
           ease: "power1.inOut",
           immediateRender: false,
         });
@@ -60,7 +59,7 @@ const Banner = () => {
             end: "center center",
             scrub: true,
           },
-          y: "308vh",
+          y: "320vh",
           width: "42vw",
           rotate: 0,
           ease: "power1.inOut",
@@ -75,7 +74,7 @@ const Banner = () => {
             end: "center bottom",
             scrub: true,
           },
-          y: isShortHeight ? "360vh" : "344vh",
+          y: isShortHeight ? "360vh" : "350vh",
           width: "28vw",
           ease: "power1.inOut",
           immediateRender: false,
@@ -177,7 +176,6 @@ const Banner = () => {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-
   }, []);
 
   return (
@@ -196,7 +194,7 @@ const Banner = () => {
             redefines your listening experience with style and performance in
             perfect harmony.
           </p>
-          <Link href="#" className="btn">
+          <Link href="#" className="btn !px-20 !py-4">
             Buy Now
           </Link>
         </div>
@@ -244,9 +242,10 @@ const Banner = () => {
                 to deep, rolling bass—you don’t just hear it, you feel it.
               </p>
               <p>
-                Whether you&#39;re in focus mode or free flow, the precision-tuned
-                audio adapts to your pace. With Masterbeat, music becomes your
-                personal soundtrack—bold, immersive, unforgettable.
+                Whether you&#39;re in focus mode or free flow, the
+                precision-tuned audio adapts to your pace. With Masterbeat,
+                music becomes your personal soundtrack—bold, immersive,
+                unforgettable.
               </p>
             </div>
           </div>
@@ -265,16 +264,16 @@ const Banner = () => {
           <div className="product">
             <Image className="img" src={product1} alt="" />
             <div className="name">Audira One</div>
-            <div className="price">₹4,499</div>
+            <div className="price">$4,499</div>
           </div>
           <div className="product">
             <div className="name">Audira Plus</div>
-            <div className="price">₹7,499</div>
+            <div className="price">$7,499</div>
           </div>
           <div className="product">
             <Image className="img" src={product3} alt="" />
             <div className="name">Audira Max Pro</div>
-            <div className="price">₹11,499</div>
+            <div className="price">$11,499</div>
           </div>
         </div>
       </div>
