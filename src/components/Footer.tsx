@@ -18,7 +18,7 @@ const Footer = () => {
             rich, and breathtaking.
           </p>
           <p>
-            Whether you're working, relaxing, or moving, our design blends
+            Whether you&#39;re working, relaxing, or moving, our design blends
             comfort and clarity for every lifestyle. You don’t just listen — you
             feel the moment.
           </p>

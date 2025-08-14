@@ -7,7 +7,6 @@ import img2 from "@/assets/images/img2.jpeg";
 import img3 from "@/assets/images/img3.jpeg";
 import product1 from "@/assets/images/green.png";
 import product3 from "@/assets/images/black.png";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
@@ -147,7 +146,7 @@ const Banner = () => {
         });
 
         // Hero section text animation (split text effect)
-        let split = new SplitText("#section1 .bannerHeading", {
+        const split = new SplitText("#section1 .bannerHeading", {
           type: "chars, words, lines",
           mask: "lines",
         });
@@ -245,7 +244,7 @@ const Banner = () => {
                 to deep, rolling bass—you don’t just hear it, you feel it.
               </p>
               <p>
-                Whether you're in focus mode or free flow, the precision-tuned
+                Whether you&#39;re in focus mode or free flow, the precision-tuned
                 audio adapts to your pace. With Masterbeat, music becomes your
                 personal soundtrack—bold, immersive, unforgettable.
               </p>
