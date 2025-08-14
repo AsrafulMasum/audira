@@ -65,7 +65,7 @@ body {
 }
 
 .bannerHeading {
-  @apply text-[11.5vw] leading-[0.85] mb-0 text-primary;
+  @apply text-[11.5vw] leading-[1] mb-0 text-primary;
 }
 
 .details {
