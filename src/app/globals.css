@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: #f5ece4;
+  --primary-color: #734425;
+  --secondary-color: #c26819;
+  --black: #2e2e2e;
+  /* --heading-font: "Outfit", sans-serif; */
+}
+
+@theme {
+  --color-bgColor: #f5ece4;
+  --color-primary: #734425;
+  --color-secondary: #c26819;
+  --color-black: #2e2e2e;
+  /* --heading-font: "Outfit", sans-serif; */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-color);
+  --color-foreground: var(--black);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--black);
+    --foreground: var(--bg-color);
   }
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--black);
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.radius {
+  @apply rounded-lg;
+}
+
+.btn {
+  @apply text-white px-5 py-2 rounded-lg bg-secondary hover:bg-primary duration-500;
+}
+
+.banner {
+  @apply h-screen w-[60vw] m-auto flex items-center justify-center text-center;
+}
+
+.headphone {
+  @apply absolute left-1/2 transform -translate-x-1/2 top-48 w-[40vw] max-w-[660px] filter drop-shadow-[8px_35px_6px_rgba(0,0,0,0.15)] will-change-transform z-9;
+}
+
+.bannerHeading {
+  @apply text-[11.5vw] leading-[0.85] mb-0 text-primary;
+}
+
+.details {
+  @apply min-h-screen pt-[4vw];
+}
+
+.detailsHeading {
+  @apply text-[11.5vw] leading-[0.85] mb-0 text-primary;
+}
+
+.content-wrapper {
+  @apply max-w-[500px];
+}
+
+.content-wrapper p {
+  @apply text-lg my-6;
+}
+
+.feature-wrapper {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-[1.8rem] mt-[8vw];
+}
+
+.feature-box {
+  @apply border-2 border-black py-[1.2vw] px-[1.4vw];
+}
+
+.feature-name {
+  @apply uppercase text-[1.4rem] leading-[1.2] mb-[0.5rem];
+}
+
+.videoSection {
+  @apply min-h-screen py-[4vw];
+}
+
+.videoSection .heading {
+  @apply text-center mb-[3vw] text-balance text-primary;
+}
+
+.videoSection .heading {
+  font-size: clamp(2rem, 12.5vw, 13.5rem);
+}
+
+.videoSection video {
+  @apply w-full max-w-[500px] shadow-[0_0_30px_rgba(115,68,37,0.22)];
+}
+
+.text-content {
+  @apply w-full flex justify-end mt-10;
+}
+
+.videoSection .content {
+  @apply max-w-[500px];
+}
+
+.videoSection p {
+  @apply mt-[1rem];
+}
+
+.gallery {
+  @apply min-h-screen relative;
+}
+
+.gallery img {
+  @apply absolute border-10 border-white shadow-[0_0_30px_rgba(115,68,37,0.22)];
+}
+
+.img1 {
+  @apply max-w-[360px] top-[12%] left-[13%] rotate-[25deg];
+}
+
+.img2 {
+  @apply max-w-[470px] right-[4%] top-[22%] rotate-[-15deg];
+}
+
+.img3 {
+  @apply max-w-[400px] left-[18%] bottom-[12%] rotate-[-10deg];
+}
+
+.products {
+  @apply text-center pt-[4vw] pb-[8vw] min-h-[94vh];
+}
+
+.products .product-heading {
+  @apply text-[11.5vw] leading-[0.85] mb-0 text-primary;
+}
+
+.product-section {
+  @apply grid grid-cols-3 mt-[3rem];
+}
+
+.products .img {
+  @apply w-full max-w-[300px] mb-[1.5rem] filter drop-shadow-[6px_15px_5px_rgba(0,0,0,0.1)];
+}
+
+.product {
+  @apply flex flex-col items-center justify-end;
+}
+
+.product .name {
+  @apply text-2xl font-medium;
+}
+
+.product .price {
+  @apply text-2xl font-bold mt-2;
+}
+
+#section6 {
+  min-height: 100vh;
+  display: flex;
+  align-items: start;
+  gap: 5vw;
+  padding-bottom: 8vw;
+}
+
+#section6 .heading {
+  @apply text-[11.5vw] leading-[0.85] mb-0 text-primary;
+}
+
+#section6 img {
+  box-shadow: 0 0 30px #73442536;
+}
+
+#section6 p {
+  margin-bottom: 1rem;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--primary-color);
+}
+
+footer .logo {
+  max-width: 132px;
+}
+
+footer .social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
